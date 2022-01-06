@@ -1,7 +1,16 @@
 name: hello world
 on:
   push:
-    branches: [main]
+    branches:
+      - 'main'
+      - 'release/**'
+      - '!dev/**'
+    paths:
+      - '!README.md'
+      - '!docs/**'
+      - '**.js'
+  pull_request:
+  workflow_dispatch:
 jobs:
   say-hello:
     runs-on: ubuntu-latest

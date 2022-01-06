@@ -10,6 +10,15 @@ on:
       - '!docs/**'
       - '**.js'
   pull_request:
+    type: [opened,reopened,synchronize]
+    branches:
+      - 'main'
+      - 'release/**'
+      - '!dev/**'
+    paths:
+      - '!README.md'
+      - '!docs/**'
+      - '**.js'
   workflow_dispatch:
 jobs:
   say-hello:

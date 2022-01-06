@@ -1,4 +1,4 @@
-#A GitHub Actions playground
+# A GitHub Actions playground
 
 ## GitHub Actions 101
 - Episode 01: Learn GitHub Actions only in 10 minutes

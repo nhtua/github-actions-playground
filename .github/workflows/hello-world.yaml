@@ -1,7 +1,7 @@
 name: hello world
 on:
   push:
-    path:
+    paths:
       - '!README.md'
       - '!docs/**'
       - '**.js'
@@ -9,6 +9,9 @@ on:
       - 'main'
       - 'release/**'
       - '!dev/**'
+  pull_request:
+    type: [opened,reopened,synchronize,labeled,unlabled]
+
   workflow_dispatch:
 jobs:
   say-hello:

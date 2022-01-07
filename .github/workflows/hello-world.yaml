@@ -1,5 +1,6 @@
 name: hello world
 on:
+
   push:
     paths:
       - '!README.md'
@@ -10,7 +11,7 @@ on:
       - 'release/**'
       - '!dev/**'
   pull_request:
-    type: [opened,reopened,synchronize,labeled,unlabled]
+    type: [opened, reopened, synchronize, labeled, unlabled]
 
   workflow_dispatch:
 jobs:

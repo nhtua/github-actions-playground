@@ -27,3 +27,6 @@ jobs:
       - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
       - run: echo Hello world, today is $TODAY
       - run: docker image ls
+      - uses: actions/checkout@v2
+      - run: npm install --dev
+      - run: npm run test

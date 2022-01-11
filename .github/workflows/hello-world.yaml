@@ -11,7 +11,7 @@ on:
       - 'release/**'
       - '!dev/**'
   pull_request:
-    type: [opened, reopened, synchronize]
+    type: [opened, reopened, synchronize, labeled, unlabeled, edited]
 
   workflow_dispatch:
 jobs:

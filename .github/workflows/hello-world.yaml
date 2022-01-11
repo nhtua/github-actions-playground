@@ -29,4 +29,6 @@ jobs:
       - run: docker image ls
       - uses: actions/checkout@v2
       - run: npm install --dev
-      - run: npm run test
+      - run: npm test -- --coverage
+      - name: upload coverage to CodeCov
+        uses: codecov/codecov-action@v2        

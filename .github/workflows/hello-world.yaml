@@ -26,9 +26,4 @@ jobs:
           labels: "do not build"
       - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
       - run: echo Hello world, today is $TODAY
-      - run: docker image ls
-      - uses: actions/checkout@v2
-      - run: npm install --dev
-      - run: npm test -- --coverage
-      - name: upload coverage to CodeCov
-        uses: codecov/codecov-action@v2        
+      - run: docker image ls     

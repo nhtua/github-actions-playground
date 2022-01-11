@@ -1,0 +1,30 @@
+{
+  "name": "github-actions-playground",
+  "version": "1.0.0",
+  "description": "Sample NodeJs project with Github Actions",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhtua/github-actions-playground.git"
+  },
+  "keywords": [
+    "demo",
+    "workflows",
+    "cicd"
+  ],
+  "author": "nhtua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhtua/github-actions-playground/issues"
+  },
+  "homepage": "https://github.com/nhtua/github-actions-playground#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}

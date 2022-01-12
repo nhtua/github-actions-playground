@@ -13,3 +13,4 @@ function minus(a,b) {
 }
 
 exports.add = add
+exports.minus = minus

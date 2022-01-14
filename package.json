@@ -26,5 +26,9 @@
   "homepage": "https://github.com/nhtua/github-actions-playground#readme",
   "devDependencies": {
     "jest": "^27.4.7"
+  },
+  "dependencies": {
+    "commander": "^8.3.0",
+    "randomstring": "^1.2.1"
   }
 }

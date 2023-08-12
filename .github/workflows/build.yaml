@@ -18,3 +18,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: npm install
       - run: node cli.js build --vendor ${{matrix.vendor}} --os ${{matrix.os}} > app-${{matrix.vendor}}-${{matrix.os}}.apk
+      - uses: actions/upload-artifact@v3
+        with:
+          name: released-apk
+          path: app-${{matrix.vendor}}-${{matrix.os}}.apk

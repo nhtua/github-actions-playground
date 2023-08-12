@@ -1,0 +1,25 @@
+name: Build Android App
+on:
+  pull_request:
+    type: [opened,reopened,synchronized]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        vendor: [Samsung, Nokia, Motorola]
+        os_version: [10, 11, 12, 13]
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: "18.x"
+        - run: npm install
+        - run: node cli.js build --vendor ${{matrix.vendor}} --os ${{matrix.os_version}} > app-${{matrix.vendor}}-${{matrix.os_version}}.apk
+        - uses: actions/upload-artifact@v3
+          with:
+            name: released-apk
+            path: app-${{matrix.vendor}}-${{matrix.os_version}}.apk
+

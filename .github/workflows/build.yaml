@@ -1,7 +1,7 @@
 name: Build Android App
 on:
   pull_request: 
-    types: [opened,reopened,synchronized]
+    type: [opened,reopened,synchronized]
   workflow_dispatch:
 
 jobs:

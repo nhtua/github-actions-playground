@@ -15,5 +15,6 @@ jobs:
       - uses: actions/setup-node@v3
         with: 
           node-version: '18.x'
+      - uses: actions/checkout@v3
       - run: npm install
       - run: node cli.js build --vendor ${{matrix.vendor}} --os ${{matrix.os}} > app-${{matrix.vendor}}-${{matrix.os}}.apk

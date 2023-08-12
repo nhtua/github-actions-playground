@@ -1,0 +1,18 @@
+name: Build Android App
+on:
+  pull_request: [opened,reopened,synchronized]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        vendor: [Samsung,Motorola,Nokia]
+        os: [10, 11, 12, 13]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: '18.x'
+      - run: npm install
+      - run: node cli.js build --vendor ${{matrix.vendor}} --os ${{matrix.os}} > app-${{matrix.vendor}}-${{matrix.os}}.apk

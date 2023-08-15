@@ -20,7 +20,7 @@ jobs:
       - run: npm install
       - run: node cli.js build --os ${{matrix.os}} --node ${{matrix.node}} > app-${{matrix.os}}-${{matrix.node}}.js
 
-      - uses: actions/upload-actifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: released-app
           path: app-${{matrix.os}}-${{matrix.node}}.js

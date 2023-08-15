@@ -11,4 +11,13 @@ program
     console.log(randomstring.generate(parseInt(length)))
   })
 
+program
+  .command('build')
+  .description('Build Electron app on different device')
+  .option('--node <node>', 'NodeJS version')
+  .option('--os <os_name>', 'OS name')
+  .action((options) => {
+    console.log(`//--> building Electron app for OS ${options.os} - Node ${options.node}`)
+  })
+ 
 program.parse(process.argv)

@@ -1,0 +1,26 @@
+name: Build Electron App
+
+on:
+  pull_request:
+    type: [opened,reopened,synchronized]
+
+jobs:
+  strategy:
+    matrix:
+      node: [14, 16, 18]
+      os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node}}
+      - run: npm ci
+      - run: node cli.js build --os ${{matrix.os}} --node ${{matrix.node}} > app-${{matrix.os}}-${{matrix.node}}.js
+
+      - uses: actions/upload-actifact@v3
+        with: 
+          name: released-app
+          path: app-${{matrix.os}}-${{matrix.node}}.js
+

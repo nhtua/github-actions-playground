@@ -13,11 +13,11 @@ program
 
 program
   .command('build')
-  .description('Build Android app on different device')
-  .option('--vendor <vendor>', 'Vendor name')
-  .option('--os <os_version>', 'OS version')
+  .description('Build Electron app on different device')
+  .option('--node <node>', 'NodeJS version')
+  .option('--os <os_name>', 'OS name')
   .action((options) => {
-    console.log(`>>> building Android app for ${options.vendor} - Android ${options.os}`)
+    console.log(`//--> building Electron app for OS ${options.os} - Node ${options.node}`)
   })
  
 program.parse(process.argv)

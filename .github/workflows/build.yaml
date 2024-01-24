@@ -2,7 +2,7 @@ name: Build Electron App
 
 on:
   pull_request:
-    type: [opened, reopened, synchronized]
+    types: [opened, reopened, synchronize]
 
 jobs:
   build-app:

@@ -1,6 +1,6 @@
 FROM node:18-slim
 
-EXPOSE 80
+EXPOSE 8000
 
 WORKDIR /app
 
